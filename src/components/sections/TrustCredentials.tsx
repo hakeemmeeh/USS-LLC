@@ -5,10 +5,46 @@ import Icon, { type IconName } from '@/components/ui/Icon';
 import { credentials } from '@/lib/content';
 import { fadeUp, scaleIn, VIEWPORT } from '@/lib/animations';
 
+/* Warm accent colors for each credential card icon background */
+const cardAccents = [
+  'bg-primary',
+  'bg-accent',
+  'bg-[#2A7D6B]',
+  'bg-primary',
+  'bg-accent-dark',
+  'bg-[#8B5E3C]',
+];
+
 export default function TrustCredentials() {
   return (
-    <section className="bg-white py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+    <section
+      className="relative overflow-hidden py-28 md:py-36"
+      style={{
+        background:
+          'linear-gradient(165deg, #F5F0EA 0%, #F0EAE0 35%, #FFFFFF 65%, #F5F0EA 100%)',
+      }}
+    >
+      {/* Decorative warm blurs */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-20 h-[380px] w-[380px] rounded-full bg-accent/[0.06] blur-[120px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 bottom-32 h-[320px] w-[320px] rounded-full bg-[#E8D5C0]/30 blur-[100px]"
+      />
+      {/* Subtle dot pattern */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage:
+            'radial-gradient(circle at 1px 1px, rgba(28,45,110,0.5) 1px, transparent 0)',
+          backgroundSize: '28px 28px',
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -16,11 +52,14 @@ export default function TrustCredentials() {
           viewport={VIEWPORT}
           className="mx-auto mb-16 max-w-2xl text-center md:mb-20"
         >
-          <span className="eyebrow">Credentials &amp; Compliance</span>
-          <h2 className="font-lora text-4xl font-bold tracking-tight text-text-dark sm:text-5xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white/70 px-4 py-2 font-jakarta text-[10px] font-bold uppercase tracking-[0.22em] text-primary shadow-sm backdrop-blur-sm sm:text-[11px]">
+            <Icon name="shield-check" className="h-3.5 w-3.5" />
+            Credentials &amp; Compliance
+          </span>
+          <h2 className="mt-6 font-lora text-4xl font-bold tracking-tight text-text-dark sm:text-5xl">
             Licensed, Trained &amp; Accountable
           </h2>
-          <p className="mx-auto mt-5 font-jakarta text-lg leading-[1.7] text-text-muted">
+          <p className="mx-auto mt-5 max-w-xl font-jakarta text-lg leading-[1.7] text-text-muted">
             We meet the standards Minnesota families and case managers expect — and we&apos;re
             transparent about exactly how.
           </p>
@@ -35,12 +74,19 @@ export default function TrustCredentials() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="group flex items-center gap-5 rounded-[20px] border border-border/60 bg-surface p-6 shadow-soft transition-all hover:-translate-y-1 hover:border-primary hover:shadow-soft-lg"
+              className="group relative flex items-center gap-5 overflow-hidden rounded-[20px] border border-[#E8DFD4]/80 bg-white/80 p-6 shadow-[0_2px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_32px_rgba(28,45,110,0.1)]"
             >
-              <span className="flex-shrink-0 rounded-2xl bg-primary p-3.5 transition-colors group-hover:bg-accent">
+              {/* Warm gradient hover fill */}
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#F5F0EA]/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <span
+                className={`relative z-10 flex-shrink-0 rounded-2xl p-3.5 transition-all duration-300 ${cardAccents[i % cardAccents.length]} group-hover:scale-105 group-hover:shadow-lg`}
+              >
                 <Icon name={c.icon as IconName} className="h-6 w-6 text-white" />
               </span>
-              <div>
+              <div className="relative z-10">
                 <div className="font-jakarta text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">
                   {c.label}
                 </div>
@@ -53,16 +99,24 @@ export default function TrustCredentials() {
           ))}
         </div>
 
+        {/* CTA Banner — warm nude tone with primary accents */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={VIEWPORT}
-          className="mt-14 rounded-[28px] bg-primary-light p-8 sm:p-10"
+          className="relative mt-14 overflow-hidden rounded-[28px] border border-[#E0D5C8]/60"
+          style={{
+            background:
+              'linear-gradient(135deg, #F0E8DC 0%, #EDE4D8 40%, #E8DFD4 100%)',
+          }}
         >
-          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+          {/* Accent highlight strip */}
+          <div aria-hidden className="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-primary via-accent to-primary" />
+
+          <div className="flex flex-col items-start gap-6 p-8 pl-10 sm:flex-row sm:items-center sm:justify-between sm:p-10 sm:pl-12">
             <div className="flex items-start gap-5">
-              <span className="flex-shrink-0 rounded-2xl bg-primary p-3.5">
+              <span className="flex-shrink-0 rounded-2xl bg-primary p-3.5 shadow-lg">
                 <Icon name="shield-check" className="h-6 w-6 text-white" />
               </span>
               <div>
@@ -77,7 +131,7 @@ export default function TrustCredentials() {
             </div>
             <a
               href="/contact"
-              className="flex-shrink-0 rounded-full bg-primary px-7 py-3.5 font-jakarta text-sm font-semibold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-soft-lg"
+              className="flex-shrink-0 rounded-full bg-primary px-7 py-3.5 font-jakarta text-sm font-semibold text-white shadow-[0_4px_16px_rgba(28,45,110,0.25)] transition-all hover:-translate-y-0.5 hover:bg-primary-dark hover:shadow-[0_8px_24px_rgba(28,45,110,0.35)]"
             >
               Request Documents
             </a>
