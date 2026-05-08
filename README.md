@@ -36,6 +36,17 @@ cp .env.example .env.local
 
 - `/preview/heroes` — stacked hero layout experiments (optional; can be removed before launch).
 
+## Push to GitHub
+
+Create an empty repository on GitHub (no README/license if you already have them here), then:
+
+```bash
+git remote add origin https://github.com/YOUR_ORG/YOUR_REPO.git
+git push -u origin main
+```
+
+Replace the URL with your repository. If GitHub creates `master` by default, either rename the default branch to `main` in the repo settings or run `git branch -M main` before the first push.
+
 ## Deploy
 
 Compatible with [Vercel](https://vercel.com) or any Node host that supports Next.js. Set `NEXT_PUBLIC_SITE_URL` in the hosting environment to your production domain.
