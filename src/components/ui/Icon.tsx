@@ -27,6 +27,7 @@ import {
   Twitter,
   Linkedin,
   Instagram,
+  Award,
   type LucideProps,
 } from 'lucide-react';
 
@@ -59,6 +60,7 @@ const map = {
   twitter: Twitter,
   linkedin: Linkedin,
   instagram: Instagram,
+  award: Award,
 } as const;
 
 export type IconName = keyof typeof map;

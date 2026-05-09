@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer';
 import JsonLd from '@/components/seo/JsonLd';
 import ScrollProgress from '@/components/ui/ScrollProgress';
 import MobileCallBar from '@/components/ui/MobileCallBar';
+import FloatingConcierge from '@/components/ui/FloatingConcierge';
 import { buildLocalBusinessJsonLd, SITE_URL } from '@/lib/seo';
 
 const jakarta = Plus_Jakarta_Sans({
@@ -71,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <FloatingConcierge />
         <MobileCallBar />
         <JsonLd data={buildLocalBusinessJsonLd()} />
       </body>
