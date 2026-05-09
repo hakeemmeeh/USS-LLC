@@ -27,7 +27,7 @@ export default function FloatingConcierge() {
   };
 
   return (
-    <div className="fixed right-3 z-50 flex w-[calc(100vw-1.5rem)] max-w-[360px] flex-col items-end bottom-[max(5.5rem,env(safe-area-inset-bottom)+4.5rem)] sm:bottom-6 sm:right-6 sm:w-auto sm:max-w-none">
+    <div className="fixed right-3 z-50 flex w-[calc(100vw-1.5rem)] max-w-[360px] flex-col items-end bottom-[calc(5.5rem+env(safe-area-inset-bottom,0px))] sm:right-6 lg:bottom-6 lg:right-6 lg:w-auto lg:max-w-none">
       <AnimatePresence>
         {isOpen && (
           <motion.div
