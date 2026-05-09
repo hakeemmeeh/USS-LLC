@@ -26,7 +26,7 @@ export default function MobileCallBar() {
           className="fixed inset-x-3 bottom-3 z-40 lg:hidden"
           aria-label="Quick contact"
         >
-          <div className="flex gap-2 rounded-full bg-primary-dark p-1.5 shadow-soft-xl">
+          <div className="flex gap-2 rounded-full bg-primary-dark/85 p-1.5 shadow-[0_8px_32px_rgba(20,31,78,0.4)] backdrop-blur-xl ring-1 ring-white/10">
             <a
               href={site.phoneHref}
               aria-label={`Call ${site.phone}`}

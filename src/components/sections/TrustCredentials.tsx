@@ -24,14 +24,20 @@ export default function TrustCredentials() {
           'linear-gradient(165deg, #F5F0EA 0%, #F0EAE0 35%, #FFFFFF 65%, #F5F0EA 100%)',
       }}
     >
-      {/* Decorative warm blurs */}
+      {/* Decorative warm blurs - Optimized using CSS radial gradients instead of expensive blur filters */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-20 h-[380px] w-[380px] rounded-full bg-accent/[0.06] blur-[120px]"
+        className="pointer-events-none absolute -right-24 top-20 h-[500px] w-[500px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(232,160,32,0.06) 0%, transparent 70%)',
+        }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-20 bottom-32 h-[320px] w-[320px] rounded-full bg-[#E8D5C0]/30 blur-[100px]"
+        className="pointer-events-none absolute -left-20 bottom-32 h-[450px] w-[450px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(232,213,192,0.3) 0%, transparent 70%)',
+        }}
       />
       {/* Subtle dot pattern */}
       <div
@@ -74,7 +80,7 @@ export default function TrustCredentials() {
               initial="hidden"
               whileInView="visible"
               viewport={VIEWPORT}
-              className="group relative flex items-center gap-5 overflow-hidden rounded-[20px] border border-[#E8DFD4]/80 bg-white/80 p-6 shadow-[0_2px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_32px_rgba(28,45,110,0.1)]"
+              className="group relative flex items-center gap-5 overflow-hidden rounded-[20px] border border-[#E8DFD4]/80 bg-white/95 p-6 shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_8px_32px_rgba(28,45,110,0.1)]"
             >
               {/* Warm gradient hover fill */}
               <div

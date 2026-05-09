@@ -1,11 +1,13 @@
 import HeroSection from '@/components/sections/HeroSection';
 import StatsBar from '@/components/sections/StatsBar';
 import AboutSection from '@/components/sections/AboutSection';
+import EditorialAbout from '@/components/sections/EditorialAbout';
 import PartnersStrip from '@/components/sections/PartnersStrip';
 import ServicesSection from '@/components/sections/ServicesSection';
 import EditorialServicesSection from '@/components/sections/EditorialServicesSection';
 import HowItWorks from '@/components/sections/HowItWorks';
 import ServiceDetails from '@/components/sections/ServiceDetails';
+import EditorialServiceDetails from '@/components/sections/EditorialServiceDetails';
 import TrustCredentials from '@/components/sections/TrustCredentials';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import EditorialTestimonials from '@/components/sections/EditorialTestimonials';
@@ -20,12 +22,14 @@ export default function HomePage() {
       <JsonLd data={buildFaqJsonLd(faqs)} />
       <HeroSection />
       <StatsBar />
-      <AboutSection />
+      {/* <AboutSection /> */}
+      <EditorialAbout />
       <PartnersStrip />
       {/* <ServicesSection /> */}
       <EditorialServicesSection />
       <HowItWorks />
-      <ServiceDetails />
+      {/* <ServiceDetails /> */}
+      <EditorialServiceDetails />
       <TrustCredentials />
       {/* <TestimonialsSection /> */}
       <EditorialTestimonials />
