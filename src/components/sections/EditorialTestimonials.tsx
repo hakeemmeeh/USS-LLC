@@ -33,12 +33,12 @@ export default function EditorialTestimonials() {
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute left-0 top-0 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]" aria-hidden />
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto max-w-7xl min-w-0 px-6 sm:px-8">
+        <div className="grid min-w-0 items-center gap-12 lg:grid-cols-2 lg:gap-24">
           
           {/* Left Side: Cinematic Portrait */}
           <div 
-            className="relative h-[450px] w-full lg:h-[650px] overflow-hidden rounded-[2rem] shadow-2xl"
+            className="relative h-[min(380px,70vw)] w-full min-w-0 overflow-hidden rounded-[1.5rem] shadow-2xl sm:h-[min(420px,65vw)] sm:rounded-[2rem] lg:h-[650px]"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
@@ -66,7 +66,7 @@ export default function EditorialTestimonials() {
 
           {/* Right Side: Editorial Quote & Controls */}
           <div 
-            className="flex flex-col justify-center"
+            className="flex min-w-0 flex-col justify-center"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
@@ -95,7 +95,7 @@ export default function EditorialTestimonials() {
                     ))}
                   </div>
 
-                  <blockquote className="font-lora text-3xl italic leading-tight text-white sm:text-4xl lg:text-[2.75rem]">
+                  <blockquote className="break-words font-lora text-2xl italic leading-tight text-white sm:text-3xl lg:text-[2.75rem]">
                     &ldquo;{t.quote}&rdquo;
                   </blockquote>
 
@@ -112,8 +112,8 @@ export default function EditorialTestimonials() {
             </div>
 
             {/* Premium Navigation Controls */}
-            <div className="flex items-center gap-6 mt-4">
-              <div className="flex items-center gap-2">
+            <div className="mt-4 flex min-w-0 flex-wrap items-center gap-4 sm:gap-6">
+              <div className="flex shrink-0 items-center gap-2">
                 <button
                   onClick={() => setActive((i) => (i - 1 + total) % total)}
                   aria-label="Previous testimonial"
@@ -131,7 +131,7 @@ export default function EditorialTestimonials() {
               </div>
 
               {/* Progress Line */}
-              <div className="flex flex-1 items-center gap-2 ml-4">
+              <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2 sm:ml-4">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}

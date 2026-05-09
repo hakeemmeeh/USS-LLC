@@ -23,7 +23,7 @@ export default function MobileCallBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-          className="fixed inset-x-3 bottom-3 z-40 lg:hidden"
+          className="fixed inset-x-3 z-40 bottom-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden"
           aria-label="Quick contact"
         >
           <div className="flex gap-2 rounded-full bg-primary-dark/85 p-1.5 shadow-[0_8px_32px_rgba(20,31,78,0.4)] backdrop-blur-xl ring-1 ring-white/10">

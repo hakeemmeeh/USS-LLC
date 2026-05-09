@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Plus_Jakarta_Sans, Lora } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
@@ -58,10 +58,16 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#1C2D6E',
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${jakarta.variable} ${lora.variable}`}>
-      <body className="min-h-screen bg-surface text-text-dark antialiased">
+      <body className="min-h-screen min-w-0 overflow-x-clip bg-surface text-text-dark antialiased">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-primary focus:px-5 focus:py-2.5 focus:font-jakarta focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
@@ -70,7 +76,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <ScrollProgress />
         <Navbar />
-        <main id="main">{children}</main>
+        <main id="main" className="min-w-0">
+          {children}
+        </main>
         <Footer />
         <FloatingConcierge />
         <MobileCallBar />

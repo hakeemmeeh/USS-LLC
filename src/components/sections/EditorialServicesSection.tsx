@@ -11,9 +11,9 @@ export default function EditorialServicesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section id="services-editorial" className="bg-white py-28 md:py-36">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <section id="services-editorial" className="bg-white py-20 md:py-36">
+      <div className="mx-auto max-w-7xl min-w-0 px-6 sm:px-8">
+        <div className="mb-12 flex min-w-0 flex-col gap-6 md:mb-24 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
             <span className="eyebrow">What We Offer</span>
             <h2 className="font-lora text-4xl font-bold tracking-tight text-text-dark sm:text-5xl mt-4">
@@ -28,16 +28,16 @@ export default function EditorialServicesSection() {
           </Link>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-24 items-start">
+        <div className="grid min-w-0 items-start gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
           {/* Left: Interactive List */}
-          <div className="flex flex-col gap-2">
+          <div className="flex min-w-0 flex-col gap-2">
             {services.map((service, idx) => {
               const isActive = activeIndex === idx;
               return (
                 <button
                   key={service.slug}
                   onMouseEnter={() => setActiveIndex(idx)}
-                  className={`group relative flex w-full items-start gap-6 rounded-2xl p-6 text-left transition-all duration-500 ${
+                  className={`group relative flex w-full min-w-0 items-start gap-4 rounded-2xl p-4 text-left transition-all duration-500 sm:gap-6 sm:p-6 ${
                     isActive
                       ? 'bg-primary shadow-soft-xl border border-primary'
                       : 'bg-white hover:bg-primary-light border border-transparent'
@@ -50,9 +50,9 @@ export default function EditorialServicesSection() {
                   >
                     <Icon name={service.icon as IconName} className="h-6 w-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <h3
-                      className={`font-lora text-2xl font-bold transition-colors duration-500 ${
+                      className={`break-words font-lora text-xl font-bold transition-colors duration-500 sm:text-2xl ${
                         isActive ? 'text-white' : 'text-text-dark'
                       }`}
                     >

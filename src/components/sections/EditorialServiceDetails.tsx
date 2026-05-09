@@ -11,22 +11,22 @@ export default function EditorialServiceDetails() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id="hcbs" className="relative bg-[#0A101C] py-32 md:py-48">
+    <section id="hcbs" className="relative overflow-x-hidden bg-[#0A101C] py-24 md:py-48">
       {/* Background glow */}
       <div className="absolute left-1/2 top-1/2 -z-10 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]" aria-hidden />
 
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+      <div className="mx-auto max-w-7xl min-w-0 px-6 sm:px-8">
         <div className="mb-16 md:mb-24">
           <span className="eyebrow eyebrow-light mb-4">How We Help</span>
-          <h2 className="font-lora text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-[4rem]">
+          <h2 className="break-words font-lora text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[4rem]">
             Our Core <span className="italic text-accent">Services</span>
           </h2>
         </div>
 
-        <div className="grid items-start gap-16 lg:grid-cols-12 lg:gap-20">
+        <div className="grid min-w-0 items-start gap-12 lg:grid-cols-12 lg:gap-20">
           
           {/* Left Column: Interactive Service Navigation */}
-          <div className="flex flex-col gap-8 lg:col-span-5">
+          <div className="flex min-w-0 flex-col gap-8 lg:col-span-5">
             {tabContent.map((t, i) => {
               const isActive = active === i;
               return (
@@ -37,8 +37,8 @@ export default function EditorialServiceDetails() {
                     isActive ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                   }`}
                 >
-                  <div className="mb-4 flex items-center justify-between">
-                    <h3 className={`font-lora text-3xl font-bold transition-all duration-500 sm:text-4xl ${isActive ? 'text-white' : 'text-white'}`}>
+                  <div className="mb-4 flex min-w-0 flex-wrap items-center justify-between gap-3">
+                    <h3 className={`min-w-0 max-w-[calc(100%-3.5rem)] break-words font-lora text-2xl font-bold transition-all duration-500 sm:text-3xl md:text-4xl ${isActive ? 'text-white' : 'text-white'}`}>
                       {i === 0 ? '245D Services' : 'PCA Services'}
                     </h3>
                     <div className={`flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-500 ${isActive ? 'border-accent bg-accent text-white' : 'border-white/20 text-white'}`}>
@@ -87,7 +87,7 @@ export default function EditorialServiceDetails() {
           </div>
 
           {/* Right Column: Cinematic Image Reveal */}
-          <div className="relative h-[500px] w-full overflow-hidden rounded-[2rem] shadow-2xl lg:col-span-7 lg:h-[700px]">
+          <div className="relative h-[min(380px,70vh)] w-full min-w-0 overflow-hidden rounded-[1.75rem] shadow-2xl sm:h-[min(480px,75vh)] sm:rounded-[2rem] lg:col-span-7 lg:h-[700px]">
             <AnimatePresence mode="popLayout">
               <motion.div
                 key={active}

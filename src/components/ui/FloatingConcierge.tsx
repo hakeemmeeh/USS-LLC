@@ -27,7 +27,7 @@ export default function FloatingConcierge() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed right-3 z-50 flex w-[calc(100vw-1.5rem)] max-w-[360px] flex-col items-end bottom-[max(5.5rem,env(safe-area-inset-bottom)+4.5rem)] sm:bottom-6 sm:right-6 sm:w-auto sm:max-w-none">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -35,7 +35,7 @@ export default function FloatingConcierge() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="mb-4 w-[340px] overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
+            className="mb-4 w-full max-w-[340px] overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-black/5"
           >
             {/* Header */}
             <div className="bg-primary px-6 py-5 text-white relative">

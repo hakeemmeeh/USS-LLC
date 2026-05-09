@@ -5,6 +5,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
@@ -13,6 +15,8 @@ body {
   font-family: var(--font-jakarta), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 h1,

@@ -57,7 +57,7 @@ export default function HeroSection() {
             {/* Heading */}
             <motion.h1
               variants={fadeUp}
-              className="mt-8 font-lora text-[2.25rem] font-bold leading-[1.08] tracking-tight text-white sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem]"
+              className="mt-8 break-words font-lora text-[2.25rem] font-bold leading-[1.08] tracking-tight text-white sm:text-[3rem] lg:text-[3.5rem] xl:text-[4rem]"
             >
               We&apos;re here for your
               <br className="hidden sm:block" /> whole{' '}
@@ -179,7 +179,7 @@ export default function HeroSection() {
 
       {/* Mobile stats bar — visible only on smaller screens */}
       <div className="relative z-10 border-t border-white/10 bg-[#0F1A2E]/80 backdrop-blur-md lg:hidden">
-        <div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-white/10 px-6 py-6 sm:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-3 divide-x divide-white/10 px-4 py-5 sm:px-8 sm:py-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +189,9 @@ export default function HeroSection() {
             <p className="font-lora text-3xl font-bold text-white">
               <CountUp to={4} suffix="+" />
             </p>
-            <p className="mt-1 font-jakarta text-xs text-white/50">Programs Served</p>
+            <p className="mt-1 break-words px-0.5 font-jakarta text-[10px] leading-tight text-white/50 sm:text-xs">
+              Programs Served
+            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -201,7 +203,9 @@ export default function HeroSection() {
             <p className="font-lora text-3xl font-bold text-accent">
               <CountUp to={100} suffix="%" />
             </p>
-            <p className="mt-1 font-jakarta text-xs text-white/50">Person-Centered</p>
+            <p className="mt-1 break-words px-0.5 font-jakarta text-[10px] leading-tight text-white/50 sm:text-xs">
+              Person-Centered
+            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -214,7 +218,9 @@ export default function HeroSection() {
               <p className="font-lora text-3xl font-bold text-white">4.9</p>
               <Icon name="star" className="h-3.5 w-3.5 fill-accent text-accent" />
             </div>
-            <p className="mt-1 font-jakarta text-xs text-white/50">Family Reviews</p>
+            <p className="mt-1 break-words px-0.5 font-jakarta text-[10px] leading-tight text-white/50 sm:text-xs">
+              Family Reviews
+            </p>
           </motion.div>
         </div>
       </div>

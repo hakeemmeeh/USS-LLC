@@ -61,15 +61,15 @@ export default function Navbar() {
         animate={{ boxShadow: scrolled ? '0 4px 12px rgba(20,31,78,0.08)' : '0 0 0 rgba(0,0,0,0)' }}
         className="sticky top-0 z-50 bg-white"
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8">
-          <Link href="/" aria-label={site.name} className="flex items-center">
+        <div className="mx-auto flex max-w-7xl min-w-0 items-center justify-between gap-3 px-6 py-4 sm:px-8">
+          <Link href="/" aria-label={site.name} className="flex min-w-0 max-w-[58%] shrink items-center sm:max-w-none">
             <Image
               src="/logo.png"
               alt={site.name}
               width={320}
               height={130}
               priority
-              className="h-14 w-auto md:h-20"
+              className="h-11 w-auto max-h-14 max-w-full object-contain object-left md:h-20"
             />
           </Link>
 

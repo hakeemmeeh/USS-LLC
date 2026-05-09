@@ -33,10 +33,10 @@ export default function EditorialAbout() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
+        <div className="grid w-full min-w-0 grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-24">
           
           {/* Left Column: Asymmetrical Overlapping Images */}
-          <div className="relative h-[600px] w-full sm:h-[700px] lg:h-[800px]">
+          <div className="relative h-[min(520px,85vh)] w-full min-w-0 overflow-hidden sm:h-[min(600px,88vh)] lg:h-[800px]">
             {/* Primary Large Image */}
             <motion.div 
               style={{ y: y1 }}
@@ -72,7 +72,7 @@ export default function EditorialAbout() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={VIEWPORT}
               transition={{ delay: 0.3 }}
-              className="absolute -left-6 bottom-1/4 rounded-2xl border border-white/40 bg-white/80 p-5 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl sm:left-4"
+              className="absolute bottom-8 left-3 z-10 rounded-2xl border border-white/40 bg-white/80 p-4 shadow-[0_8px_30px_rgba(0,0,0,0.12)] backdrop-blur-xl sm:bottom-10 sm:left-4 sm:p-5"
             >
               <div className="mb-2 flex gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -85,11 +85,11 @@ export default function EditorialAbout() {
           </div>
 
           {/* Right Column: Editorial Typography */}
-          <div className="relative z-20">
+          <div className="relative z-20 min-w-0">
             <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={VIEWPORT}>
               <span className="eyebrow mb-6">Our Manifesto</span>
               
-              <h2 className="mb-8 font-lora text-4xl font-bold leading-[1.1] tracking-tight text-text-dark sm:text-5xl lg:text-[3.5rem]">
+              <h2 className="mb-8 break-words font-lora text-3xl font-bold leading-[1.1] tracking-tight text-text-dark sm:text-4xl lg:text-[3.5rem]">
                 Compassionate Care Is Not A Service. <br />
                 <span className="text-primary italic">It&apos;s A Standard.</span>
               </h2>
