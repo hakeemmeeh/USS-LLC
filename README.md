@@ -49,7 +49,32 @@ Replace the URL with your repository. If GitHub creates `master` by default, eit
 
 ## Deploy
 
-Compatible with [Vercel](https://vercel.com) or any Node host that supports Next.js. Set `NEXT_PUBLIC_SITE_URL` in the hosting environment to your production domain.
+### Vercel (recommended — GitHub)
+
+Your repo: [github.com/hakeemmeeh/USS-LLC](https://github.com/hakeemmeeh/USS-LLC).
+
+1. Sign in at [vercel.com](https://vercel.com) (GitHub login is fine).
+2. **Add New… → Project** → **Import** `hakeemmeeh/USS-LLC`.
+3. Leave defaults: **Framework Preset: Next.js**, **Root Directory:** `./`, **Build:** `next build`, **Output:** (auto).
+4. Under **Environment Variables**, add:
+   - `NEXT_PUBLIC_SITE_URL` = your live URL (use `https://<project>.vercel.app` until you attach a custom domain).
+5. Click **Deploy**. Future pushes to `main` deploy automatically.
+
+Optional: set the same `NEXT_PUBLIC_SITE_URL` under **Production** vs **Preview** if you use a custom domain only in production.
+
+### CLI (from your machine)
+
+```bash
+npm i -g vercel
+vercel login
+cd /path/to/uss-llc
+vercel        # first time: link project
+vercel --prod # production deploy
+```
+
+### Other hosts
+
+Any Node host that supports Next.js works. Set `NEXT_PUBLIC_SITE_URL` to the public site URL for correct canonical links, Open Graph, and sitemap.
 
 ## License
 
