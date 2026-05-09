@@ -48,7 +48,7 @@ export default function FloatingConcierge() {
               </button>
               <h3 className="font-lora text-xl font-bold">Care Concierge</h3>
               <p className="mt-1 font-jakarta text-xs text-white/80">
-                Let's find the right support for you.
+                Let&apos;s find the right support for you.
               </p>
             </div>
 
@@ -167,7 +167,7 @@ export default function FloatingConcierge() {
                     </div>
                     <p className="font-lora text-xl font-bold text-text-dark">Thank You!</p>
                     <p className="mt-2 font-jakarta text-sm text-text-muted">
-                      We've received your request and will reach out to you shortly.
+                      We&apos;ve received your request and will reach out to you shortly.
                     </p>
                     <button
                       onClick={() => {

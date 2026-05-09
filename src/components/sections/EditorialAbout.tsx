@@ -91,7 +91,7 @@ export default function EditorialAbout() {
               
               <h2 className="mb-8 font-lora text-4xl font-bold leading-[1.1] tracking-tight text-text-dark sm:text-5xl lg:text-[3.5rem]">
                 Compassionate Care Is Not A Service. <br />
-                <span className="text-primary italic">It's A Standard.</span>
+                <span className="text-primary italic">It&apos;s A Standard.</span>
               </h2>
               
               <p className="mb-6 font-jakarta text-lg leading-[1.8] text-text-muted">
